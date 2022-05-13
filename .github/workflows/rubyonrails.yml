@@ -52,7 +52,6 @@ jobs:
       # Add or replace any other lints here
       - name: Security audit dependencies
         run:  bundle exec bundle-audit --update
-name: Deploy
   on:
     push:
      branches:
