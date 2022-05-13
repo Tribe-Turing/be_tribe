@@ -53,6 +53,11 @@ jobs:
       - name: Security audit dependencies
         run:  bundle exec bundle-audit --update
       - name: Security audit application code
-        run: brakeman --no-exit-on-warn --no-exit-on-error
+        run: | brakeman -f json > tmp/brakeman.json || exit 0
+- name: Brakeman
+  uses: devmasx/brakeman-linter-action@v1.0.0
+  env:
+    GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    REPORT_PATH: tmp/brakeman.json
       - name: Lint Ruby files
         run: bin/rubocop --parallel
