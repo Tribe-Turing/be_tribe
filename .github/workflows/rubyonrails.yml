@@ -53,21 +53,13 @@ jobs:
       - name: Security audit dependencies
         run:  bundle exec bundle-audit --update
  
-name: "Deploy"
-on:
-  push:
-    branches:
-      - main
-
-jobs:
- build:
+deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Checkout   
-        uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "be-tribe" #Must be unique in Heroku
-          heroku_email: "gunnar.l.sorensen@gmail.com"
+     - uses: actions/checkout@v2
+     - uses: akhileshns/heroku-deploy@v3.6.8
+       with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "be-tribe" #Must be unique in Heroku
+        heroku_email: "gunnar.l.sorensen@gmail.com"
