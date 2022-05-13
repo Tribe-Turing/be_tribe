@@ -52,5 +52,3 @@ jobs:
       # Add or replace any other lints here
       - name: Security audit dependencies
         run:  bundle exec bundle-audit --update
-      - name: Lint Ruby files
-        run:  bundle exec rubocop
