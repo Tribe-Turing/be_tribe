@@ -10,9 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_05_13_224525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.string "sports"
+    t.string "night_life"
+    t.string "networking"
+    t.string "traveling"
+    t.string "video_games"
+    t.string "cinema"
+    t.string "music"
+    t.string "nature"
+    t.string "food"
+    t.string "art"
+    t.string "tech"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_interests_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "body"
+    t.bigint "chatrooms_id"
+    t.bigint "users_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatrooms_id"], name: "index_messages_on_chatrooms_id"
+    t.index ["users_id"], name: "index_messages_on_users_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "pronouns"
+    t.string "password_digest"
+    t.string "bio"
+    t.string "picture"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "interests", "users"
+  add_foreign_key "messages", "chatrooms", column: "chatrooms_id"
+  add_foreign_key "messages", "users", column: "users_id"
 end
