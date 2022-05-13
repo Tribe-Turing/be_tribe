@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 5.6.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -28,6 +28,8 @@ gem 'faraday'
 gem 'figaro'
 gem 'jsonapi-serializer'
 gem 'rubocop', require: false
+gem 'bundler-audit', require: false
+gem 'ruby_audit', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -43,6 +45,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'brakeman'
 end
 
 group :test do
