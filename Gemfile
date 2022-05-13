@@ -28,6 +28,8 @@ gem 'faraday'
 gem 'figaro'
 gem 'jsonapi-serializer'
 gem 'rubocop', require: false
+gem 'bundler-audit', require: false
+gem 'ruby_audit', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
