@@ -52,9 +52,6 @@ jobs:
       # Add or replace any other lints here
       - name: Security audit dependencies
         run:  bundle exec bundle-audit --update
-
-
-  jobs:
     build:
       runs-on: ubuntu-latest
       steps:
