@@ -1,5 +1,6 @@
 class Interest < ApplicationRecord
-  belongs_to :user
-
   validates_presence_of :interest_name
+
+  has_many :user_interests
+  has_many :users, through: :user_interests
 end
