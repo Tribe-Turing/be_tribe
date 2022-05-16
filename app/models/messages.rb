@@ -1,7 +1,6 @@
 class Message < ApplicationRecord
-
-  belongs_to :user
-    belongs_to :conversation
+    belongs_to :user
+    belongs_to :chatrooms
 
     def user_prof_pic
         self.user.profile_pic
