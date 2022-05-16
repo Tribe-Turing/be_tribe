@@ -7,8 +7,7 @@ class User < ApplicationRecord
   validates_presence_of :picture
   validates_presence_of :city
 
-  has_many :user_interests
-  has_many :interests, through: :user_interests
+  has_many :interests
   has_many :messages
   has_many :chatrooms, through: :messages
 
