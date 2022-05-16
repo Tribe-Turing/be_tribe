@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2022_05_15_194809) do
   enable_extension "plpgsql"
 
   create_table "chatrooms", force: :cascade do |t|
-    t.string "title"
+    t.string "user_a_id"
+    t.string "user_b_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,11 +41,11 @@ ActiveRecord::Schema.define(version: 2022_05_15_194809) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string "body"
-    t.bigint "chatroom_id"
-    t.bigint "user_id"
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.string "content"
+    t.integer "user_id"
+    t.integer "chatroom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +61,4 @@ ActiveRecord::Schema.define(version: 2022_05_15_194809) do
   end
 
   add_foreign_key "interests", "users"
-  add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
 end

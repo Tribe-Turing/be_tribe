@@ -1,8 +1,6 @@
 class Chatroom < ApplicationRecord
-  validates_presence_of :title
-  has_many :messages
-  has_many :users, through: :messages
-    belongs_to :user_a, class_name: "User"
+
+  belongs_to :user_a, class_name: "User"
     belongs_to :user_b, class_name: "User"
     has_many :messages
 
@@ -16,4 +14,5 @@ class Chatroom < ApplicationRecord
     def user_b_messages
         self.messages.where(user: self.user_b)
     end
+
 end
