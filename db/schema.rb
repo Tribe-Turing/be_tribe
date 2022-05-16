@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_16_153910) do
+ActiveRecord::Schema.define(version: 2022_05_16_165759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,8 @@ ActiveRecord::Schema.define(version: 2022_05_16_153910) do
 
   create_table "interests", force: :cascade do |t|
     t.string "interest_name"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_interests_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -36,6 +34,13 @@ ActiveRecord::Schema.define(version: 2022_05_16_153910) do
     t.integer "chatroom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_interests", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "interest_id"
+    t.index ["interest_id"], name: "index_user_interests_on_interest_id"
+    t.index ["user_id"], name: "index_user_interests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,5 +55,6 @@ ActiveRecord::Schema.define(version: 2022_05_16_153910) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "interests", "users"
+  add_foreign_key "user_interests", "interests"
+  add_foreign_key "user_interests", "users"
 end
