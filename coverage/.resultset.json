@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/gls/Turing/4module/be_tribe/app/models/chatroom.rb": {
+      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/chatroom.rb": {
         "lines": [
           1,
           1,
@@ -24,25 +24,45 @@
           null
         ]
       },
-      "/Users/gls/Turing/4module/be_tribe/app/models/interest.rb": {
+      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/interest.rb": {
         "lines": [
           1,
           1,
           null,
-          1,
-          null
-        ]
-      },
-      "/Users/gls/Turing/4module/be_tribe/app/models/message.rb": {
-        "lines": [
-          1,
-          1,
           1,
           1,
           null
         ]
       },
-      "/Users/gls/Turing/4module/be_tribe/app/models/user.rb": {
+      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/message.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/user_interest.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -53,6 +73,7 @@
           1,
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -66,25 +87,7 @@
           null
         ]
       },
-      "/Users/gls/Turing/4module/be_tribe/app/models/messages.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/gls/Turing/4module/be_tribe/app/models/concerns/chatroom.rb": {
+      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/concerns/chatroom.rb": {
         "lines": [
           0,
           null,
@@ -109,6 +112,6 @@
         }
       }
     },
-    "timestamp": 1652708648
+    "timestamp": 1652721595
   }
 }
