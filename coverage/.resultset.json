@@ -87,6 +87,38 @@
           null
         ]
       },
+      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/controllers/api/v1/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/serializers/user_serializer.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          24,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/concerns/chatroom.rb": {
         "lines": [
           0,
@@ -112,6 +144,6 @@
         }
       }
     },
-    "timestamp": 1652721595
+    "timestamp": 1652733754
   }
 }
