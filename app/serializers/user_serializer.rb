@@ -9,9 +9,22 @@ class UserSerializer
         "pronouns": user.pronouns,
         "image": user.picture,
         "city": user.city,
-        "interests": user.interests.map { |interest|  interest.interest_name},
+        "interests": user.interests.map { |interest|  interest.interest_name },
         "bio": user.bio
       }
     end
+  end
+
+  def self.one_user(user)
+    {
+      "id": user.id,
+      "first_name": user.first_name,
+      "last_name": user.last_name,
+      "pronouns": user.pronouns,
+      "image": user.picture,
+      "city": user.city,
+      "interests": user.interests.map { |interest|  interest.interest_name },
+      "bio": user.bio
+    }
   end
 end

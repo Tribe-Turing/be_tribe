@@ -49,4 +49,23 @@ RSpec.describe 'Expose User API' do
       expect(user).to have_key(:bio)
     end
   end
+
+  it 'sends json for one user based on id' do
+    get "/api/v1/users/#{@eldridge.id}"
+
+    expect(response).to be_successful
+
+    user = JSON.parse(response.body, symbolize_names: true)
+
+    expect(user).to be_a(Hash)
+    expect(user).to have_key(:id)
+    expect(user).to have_key(:first_name)
+    expect(user).to have_key(:last_name)
+    expect(user).to have_key(:pronouns)
+    expect(user).to have_key(:image)
+    expect(user).to have_key(:city)
+    expect(user).to have_key(:interests)
+    expect(user[:interests]).to be_an(Array)
+    expect(user).to have_key(:bio)
+  end
 end
