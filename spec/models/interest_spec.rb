@@ -6,6 +6,7 @@ RSpec.describe Interest do
   end
 
   describe 'relationships' do
-    it { should belong_to(:user)}
+    it { should have_many(:user_interests)}
+    it { should have_many(:users).through(:user_interests)}
   end
 end
