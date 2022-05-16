@@ -25,6 +25,3 @@
 # Ignore application configuration
 /config/application.yml
 /coverage
-/coverage/.resultset.json
-/coverage/.last_run.json
-/coverage/index.html
