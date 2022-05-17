@@ -1,5 +1,4 @@
-class Chatroom < ApplicationRecord
-  validates_presence_of :title
+class Conversation < ApplicationRecord
   has_many :messages
   has_many :users, through: :messages
     belongs_to :user_a, class_name: "User"

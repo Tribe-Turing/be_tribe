@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Chatroom do
+RSpec.describe Conversation do
   describe 'validations' do
    end
   #
