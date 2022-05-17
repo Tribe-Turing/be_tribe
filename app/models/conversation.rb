@@ -1,8 +1,4 @@
-<<<<<<< HEAD:app/models/conversation.rb
 class Conversation < ApplicationRecord
-=======
-class Chatroom < ApplicationRecord
->>>>>>> 7a0b959 (Rename class to api/v1 and add seed data for chatroom):app/models/chatroom.rb
   has_many :messages
   has_many :users, through: :messages
     belongs_to :user_a, class_name: "User"
