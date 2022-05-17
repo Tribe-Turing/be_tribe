@@ -1,9 +1,9 @@
 class Message < ApplicationRecord
   validates_presence_of :content
   validates_presence_of :user_id
-  validates_presence_of :chatroom_id
+  validates_presence_of :conversation_id
   belongs_to :user
-  belongs_to :chatroom
+  belongs_to :conversation
 
   def user_prof_pic
       self.user.profile_pic

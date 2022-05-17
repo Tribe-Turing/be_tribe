@@ -1,9 +1,8 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/chatroom.rb": {
+      "/Users/gls/Turing/4module/be_tribe/app/models/conversation.rb": {
         "lines": [
-          1,
           1,
           1,
           1,
@@ -24,7 +23,7 @@
           null
         ]
       },
-      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/interest.rb": {
+      "/Users/gls/Turing/4module/be_tribe/app/models/interest.rb": {
         "lines": [
           1,
           1,
@@ -34,7 +33,7 @@
           null
         ]
       },
-      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/message.rb": {
+      "/Users/gls/Turing/4module/be_tribe/app/models/message.rb": {
         "lines": [
           1,
           1,
@@ -53,7 +52,7 @@
           null
         ]
       },
-      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/user_interest.rb": {
+      "/Users/gls/Turing/4module/be_tribe/app/models/user_interest.rb": {
         "lines": [
           1,
           null,
@@ -62,7 +61,7 @@
           null
         ]
       },
-      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/user.rb": {
+      "/Users/gls/Turing/4module/be_tribe/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -87,7 +86,7 @@
           null
         ]
       },
-      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/controllers/api/v1/users_controller.rb": {
+      "/Users/gls/Turing/4module/be_tribe/app/controllers/api/v1/users_controller.rb": {
         "lines": [
           1,
           null,
@@ -103,7 +102,7 @@
           null
         ]
       },
-      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/serializers/user_serializer.rb": {
+      "/Users/gls/Turing/4module/be_tribe/app/serializers/user_serializer.rb": {
         "lines": [
           1,
           null,
@@ -137,7 +136,7 @@
           null
         ]
       },
-      "/Users/richieturing/Turing/mod4/projects/be_tribe/app/models/concerns/chatroom.rb": {
+      "/Users/gls/Turing/4module/be_tribe/app/models/concerns/chatroom.rb": {
         "lines": [
           0,
           null,
@@ -160,8 +159,77 @@
         ],
         "branches": {
         }
+      },
+      "/Users/gls/Turing/4module/be_tribe/app/controllers/api/v1/messages_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gls/Turing/4module/be_tribe/app/controllers/api/v1/conversations_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1652738870
+    "timestamp": 1652751918
   }
 }
