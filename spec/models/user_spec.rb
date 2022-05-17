@@ -16,6 +16,6 @@ RSpec.describe User do
     it { should have_many(:user_interests)}
     it { should have_many(:interests).through(:user_interests)}
     it { should have_many(:messages)}
-    it { should have_many(:chatrooms).through(:messages)}
+    it { should have_many(:conversations).through(:messages)}
   end
 end

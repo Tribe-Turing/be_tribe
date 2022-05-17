@@ -30,10 +30,12 @@ ActiveRecord::Schema.define(version: 2022_05_16_165759) do
 
   create_table "messages", force: :cascade do |t|
     t.string "content"
-    t.integer "user_id"
-    t.integer "chatroom_id"
+    t.bigint "user_id"
+    t.bigint "conversation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "user_interests", force: :cascade do |t|
@@ -55,6 +57,8 @@ ActiveRecord::Schema.define(version: 2022_05_16_165759) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "user_interests", "interests"
   add_foreign_key "user_interests", "users"
 end
