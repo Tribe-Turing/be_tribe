@@ -33,4 +33,4 @@ User.create!(first_name: 'Sam', last_name: 'Ivari', pronouns: 'she/her', passwor
 
 User.create!(first_name: 'Sam', last_name: 'Mistele', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'profile pic link', city: 'aurora,co', interests: [music, traveling, cinema])
 
-Chatroom.create!(user_a_id: 1, user_b_id: 2, id: 15)
+Conversation.create!(user_a_id: 1, user_b_id: 2, id: 15)
