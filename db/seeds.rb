@@ -34,3 +34,12 @@ User.create!(first_name: 'Sam', last_name: 'Ivari', pronouns: 'she/her', passwor
 User.create!(first_name: 'Sam', last_name: 'Mistele', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'profile pic link', city: 'aurora,co', interests: [music, traveling, cinema])
 
 Conversation.create!(user_a_id: 1, user_b_id: 2, id: 15)
+
+Message.create!(conversation_id: 15, user_id: 1, content: "Test 1" )
+Message.create!(conversation_id: 15, user_id: 2, content: "Test 1" )
+Message.create!(conversation_id: 15, user_id: 1, content: "Test 2" )
+Message.create!(conversation_id: 15, user_id: 2, content: "Test 2" )
+Message.create!(conversation_id: 15, user_id: 1, content: "Test 3" )
+Message.create!(conversation_id: 15, user_id: 2, content: "Test 3" )
+Message.create!(conversation_id: 15, user_id: 1, content: "Test 4" )
+Message.create!(conversation_id: 15, user_id: 2, content: "Test 4" )
