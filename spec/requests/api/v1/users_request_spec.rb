@@ -56,7 +56,6 @@ RSpec.describe 'Expose User API' do
     expect(response).to be_successful
 
     user = JSON.parse(response.body, symbolize_names: true)
-
     expect(user).to be_a(Hash)
     expect(user).to have_key(:id)
     expect(user).to have_key(:first_name)
@@ -66,6 +65,7 @@ RSpec.describe 'Expose User API' do
     expect(user).to have_key(:city)
     expect(user).to have_key(:interests)
     expect(user[:interests]).to be_an(Array)
+    expect(user[:messages]).to be_an(Array)
     expect(user).to have_key(:bio)
   end
 end

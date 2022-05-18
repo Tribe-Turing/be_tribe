@@ -24,7 +24,8 @@ class UserSerializer
       "image": user.picture,
       "city": user.city,
       "interests": user.interests.map { |interest|  interest.interest_name },
-      "bio": user.bio
+      "bio": user.bio,
+      "messages": user.all_conversations
     }
   end
 end
