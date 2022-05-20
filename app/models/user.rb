@@ -26,8 +26,8 @@ class User < ApplicationRecord
 
             data = {
                 convo: convo,
-                user_a_username: User.find(convo.user_a_id),
-                user_b_username: User.find(convo.user_b_id),
+                user_a: User.find(convo.user_a_id),
+                user_b: User.find(convo.user_b_id),
                 messages: convo.messages
             }
             all_convos << data
@@ -36,8 +36,8 @@ class User < ApplicationRecord
         self.convos_b.each do |convo|
             data = {
                 convo: convo,
-                user_a_username: User.find(convo.user_a_id),
-                user_b_username: User.find(convo.user_b_id),
+                user_a: User.find(convo.user_a_id),
+                user_b: User.find(convo.user_b_id),
                 messages: convo.messages
             }
             all_convos << data
