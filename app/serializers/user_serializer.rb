@@ -25,7 +25,7 @@ class UserSerializer
       "city": user.city,
       "interests": user.interests.map { |interest|  interest.interest_name },
       "bio": user.bio,
-      "messages": user.all_conversations
+      "conversations": user.all_conversations
     }
   end
 end
