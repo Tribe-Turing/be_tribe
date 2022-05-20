@@ -65,7 +65,6 @@ RSpec.describe 'Expose User API' do
     expect(user).to have_key(:city)
     expect(user).to have_key(:interests)
     expect(user[:interests]).to be_an(Array)
-    expect(user[:messages]).to be_an(Array)
     expect(user).to have_key(:bio)
   end
 end
