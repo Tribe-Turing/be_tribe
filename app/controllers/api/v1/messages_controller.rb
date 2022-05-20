@@ -3,16 +3,21 @@ class Api::V1::MessagesController < ApplicationController
 
     def create
         @message = Message.create(message_params)
-        @conversation = Chatroom.find(@message[:chatroom_id])
-        ConversationChannel.broadcast_to(@conversation, { message: @message, user_prof_pic: @message.user.profile_pic, user_username: @message.user.username })
+        @conversation = Conversation.find(@message[:conversation_id])
+        ConversationChannel.broadcast_to(@conversation, { message: @message, user_prof_pic: @message.user.profile_pic })
         render json: @message
     end
 
-    # def update
-    #     @message = Message.find(params[:id])
-    #     @message.update(message_params)
-    #     render json: @message
+    # def show
+    #   @message = Message.find(params[:id])
+    #   render json: @message
     # end
+
+    def update
+        @message = Message.find(params[:id])
+        @message.update(message_params)
+        render json: @message
+    end
 
     private
 
