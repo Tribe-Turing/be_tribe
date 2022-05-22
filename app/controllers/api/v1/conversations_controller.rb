@@ -1,5 +1,5 @@
 class Api::V1::ConversationsController < ApplicationController
-    before_action only: [:create]
+    before_action only: [:create, :show]
 
     def index
         @conversations = Conversation.all
@@ -12,7 +12,8 @@ class Api::V1::ConversationsController < ApplicationController
     end
 
     def create
-        @conversation = Conversation.new(conversation_params)
+      binding.pry
+        @conversation = Conversation.create(conversation_params)
 
         if @conversation.valid?
             @conversation.save
