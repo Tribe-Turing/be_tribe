@@ -43,3 +43,26 @@ Message.create!(conversation_id: 15, user_id: 1, content: "Test 3" )
 Message.create!(conversation_id: 15, user_id: 2, content: "Test 3" )
 Message.create!(conversation_id: 15, user_id: 1, content: "Test 4" )
 Message.create!(conversation_id: 15, user_id: 2, content: "Test 4" )
+
+
+Conversation.create!(user_a_id: 3, user_b_id: 1, id: 14)
+
+Message.create!(conversation_id: 14, user_id: 3, content: "Test 1" )
+Message.create!(conversation_id: 14, user_id: 1, content: "Test 1" )
+Message.create!(conversation_id: 14, user_id: 3, content: "Test 2" )
+Message.create!(conversation_id: 14, user_id: 1, content: "Test 2" )
+Message.create!(conversation_id: 14, user_id: 3, content: "Test 3" )
+Message.create!(conversation_id: 14, user_id: 1, content: "Test 3" )
+Message.create!(conversation_id: 14, user_id: 3, content: "Test 4" )
+Message.create!(conversation_id: 14, user_id: 1, content: "Test 4" )
+
+Conversation.create!(user_a_id: 5, user_b_id: 3, id: 1)
+
+Message.create!(conversation_id: 1, user_id: 3, content: "Test 1" )
+Message.create!(conversation_id: 1, user_id: 5, content: "Test 1" )
+Message.create!(conversation_id: 1, user_id: 3, content: "Test 2" )
+Message.create!(conversation_id: 1, user_id: 5, content: "Test 2" )
+Message.create!(conversation_id: 1, user_id: 3, content: "Test 3" )
+Message.create!(conversation_id: 1, user_id: 5, content: "Test 3" )
+Message.create!(conversation_id: 1, user_id: 3, content: "Test 4" )
+Message.create!(conversation_id: 1, user_id: 5, content: "Test 4" )
