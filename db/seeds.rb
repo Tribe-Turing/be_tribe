@@ -19,13 +19,13 @@ tech = Interest.create!(interest_name: 'tech')
 
 User.create!(first_name: 'Eldridge', last_name: 'Turambi', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'deer', city: 'denver,co', interests: [sports, night_life, food])
 
-User.create!(first_name: 'Andrew', last_name: 'Musselman', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'koala bear', city: 'denver,co', interests: [art, traveling, video_games])
+User.create!(first_name: 'Andrew', last_name: 'Musselman', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'koala-bear', city: 'denver,co', interests: [art, traveling, video_games])
 
 User.create!(first_name: 'Dillon', last_name: 'Parker', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'lion', city: 'aurora,co', interests: [tech, nature, video_games])
 
 User.create!(first_name: 'Gunnar', last_name: 'Sorensen', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'gorilla', city: 'aurora,co', interests: [networking, traveling, video_games])
 
-User.create!(first_name: 'Lauralyn', last_name: 'Watson', pronouns: 'she/her', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'red fox', city: 'aurora,co', interests: [tech, traveling, video_games])
+User.create!(first_name: 'Lauralyn', last_name: 'Watson', pronouns: 'she/her', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'red-fox', city: 'aurora,co', interests: [tech, traveling, video_games])
 
 User.create!(first_name: 'Rory', last_name: 'Magee', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'dragon', city: 'aurora,co', interests: [tech, traveling, video_games])
 
