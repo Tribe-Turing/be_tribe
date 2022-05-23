@@ -1,5 +1,5 @@
 class Api::V1::ConversationsController < ApplicationController
-    before_action only: [:create]
+    before_action only: [:create, :show]
 
     def index
         @conversations = Conversation.all
@@ -12,14 +12,13 @@ class Api::V1::ConversationsController < ApplicationController
     end
 
     def create
-        @conversation = Conversation.new(conversation_params)
 
-        if @conversation.valid?
-            @conversation.save
-            render json: @conversation
-        else
-            render json: {error: "Invalid request"}
-        end
+      if Conversation.between(params[:user_a_id], params[:user_b_id]).present?
+        render json: {error: "Invalid request"}
+      else
+        @conversation = Conversation.create!(conversation_params)
+        render json: @conversation
+      end
     end
 
     private
