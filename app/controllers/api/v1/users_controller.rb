@@ -12,19 +12,17 @@ class Api::V1::UsersController < ApplicationController
 
   def update
     user = User.find_by(id: params[:id].to_i)
-    binding.pry
-    if user.update(user_params) #&& user.interests.update(params[:interests])
-      # params[:interests].each do |interest|
-      #   binding.pry
-      #   if user.interests.include?(interest) == false
-      #     UserInterest.new(user_id: params[:id].to_i, interest: interest)
-      #   end
-      # end
+    if user.update(user_params)
+      params[:interests].each do |interest|
+        if user.interests.include?(interest) == false
+          db_interest = Interest.find_by(interest_name: interest)
+          UserInterest.create!(user_id: user.id, interest_id: db_interest.id)
+        end
+      end
       render json: UserSerializer.one_user(user)
     else
       render json: { status: 400, message: "Unable to update user" }
     end
-    # binding.pry
   end
 
   private
