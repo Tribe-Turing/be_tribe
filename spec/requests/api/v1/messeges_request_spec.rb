@@ -44,8 +44,6 @@ RSpec.describe 'Expose Messages API' do
     expect(conversation).to have_key(:user_b_id)
     expect(conversation).to have_key(:created_at)
     expect(conversation).to have_key(:updated_at)
-
-    binding.pry
   end
 
   # it 'sends json for one user based on id' do

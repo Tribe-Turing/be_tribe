@@ -41,13 +41,14 @@ RSpec.describe 'Expose Conversations API' do
   end
   it 'creates a new conversation' do
 
-    @conversation_3 = Conversation.create!(user_a_id: @dillon.id, user_b_id: @eldridge.id, id: 5)
+    # @conversation_3 = Conversation.create!(user_a_id: @dillon.id, user_b_id: @eldridge.id, id: 5)
 
     post "/api/v1/conversations", :params => {user_a_id: @dillon.id, user_b_id: @eldridge.id}
     expect(response).to be_successful
     conversation = JSON.parse(response.body, symbolize_names: true)
-    expect(conversation).to be_an(Array)
-    expect(conversation.count).to eq(2)
+
+    expect(conversation).to be_an(Hash)
+    expect(conversation.count).to eq(5)
 
   end
 end
