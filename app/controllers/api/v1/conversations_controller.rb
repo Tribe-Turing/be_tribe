@@ -12,15 +12,13 @@ class Api::V1::ConversationsController < ApplicationController
     end
 
     def create
-      binding.pry
-        @conversation = Conversation.create(conversation_params)
 
-        if @conversation.valid?
-            @conversation.save
-            render json: @conversation
-        else
-            render json: {error: "Invalid request"}
-        end
+      if Conversation.between(params[:user_a_id], params[:user_b_id]).present?
+        render json: {error: "Invalid request"}
+      else
+        @conversation = Conversation.create!(conversation_params)
+        render json: @conversation
+      end
     end
 
     private
