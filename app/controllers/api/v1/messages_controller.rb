@@ -2,7 +2,6 @@ class Api::V1::MessagesController < ApplicationController
     before_action only: [:create, :update]
 
     def create
-      binding.pry
         @message = Message.create(message_params)
         @conversation = Conversation.find(@message[:conversation_id])
         ConversationChannel.broadcast_to(@conversation, { message: @message })
