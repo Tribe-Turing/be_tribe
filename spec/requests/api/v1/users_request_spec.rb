@@ -67,4 +67,29 @@ RSpec.describe 'Expose User API' do
     expect(user[:interests]).to be_an(Array)
     expect(user).to have_key(:bio)
   end
+
+  it 'sends json to edit one user based on given params' do
+    patch_params = {
+      'city': 'denver,co',
+      'interests': ['sports', 'night life', 'food', 'traveling', 'tech']
+    }
+    patch "/api/v1/users/#{@eldridge.id}", params: patch_params
+
+    expect(response).to be_successful
+    user = JSON.parse(response.body, symbolize_names: true)
+
+    expect(user).to have_key(:id)
+    expect(user).to have_key(:first_name)
+    expect(user).to have_key(:last_name)
+    expect(user).to have_key(:pronouns)
+    expect(user).to have_key(:image)
+    expect(user).to have_key(:city)
+    expect(user).to have_key(:interests)
+    expect(user[:interests]).to be_an(Array)
+    expect(user).to have_key(:bio)
+    
+    user[:interests].each do |interest|
+      expect(interest).to be_a(String)
+    end
+  end
 end

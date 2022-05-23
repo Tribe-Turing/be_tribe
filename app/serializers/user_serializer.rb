@@ -9,7 +9,7 @@ class UserSerializer
         "pronouns": user.pronouns,
         "image": user.picture,
         "city": user.city,
-        "interests": user.interests.map { |interest|  interest.interest_name },
+        "interests": user.interests.map { |interest|  interest.interest_name }.uniq,
         "bio": user.bio
       }
     end
@@ -23,7 +23,7 @@ class UserSerializer
       "pronouns": user.pronouns,
       "image": user.picture,
       "city": user.city,
-      "interests": user.interests.map { |interest|  interest.interest_name },
+      "interests": user.interests.map { |interest|  interest.interest_name }.uniq,
       "bio": user.bio,
       "conversations": user.all_conversations
     }
