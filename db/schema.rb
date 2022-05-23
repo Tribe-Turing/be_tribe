@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2022_05_16_165759) do
   enable_extension "plpgsql"
 
   create_table "conversations", force: :cascade do |t|
-    t.string "user_a_id"
-    t.string "user_b_id"
+    t.integer "user_a_id"
+    t.integer "user_b_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

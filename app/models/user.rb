@@ -6,12 +6,10 @@ class User < ApplicationRecord
   validates_presence_of :bio
   validates_presence_of :picture
   validates_presence_of :city
-  # validates_presence_of :interests
 
   has_many :user_interests
   has_many :interests, through: :user_interests
   has_many :messages
-  has_many :conversations, through: :messages
 
   has_many :convos_a, class_name: "Conversation", foreign_key: "user_a_id"
   has_many :user_bs, through: :convos_a, source: :user_b
