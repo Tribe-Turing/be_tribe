@@ -19,4 +19,31 @@ class User < ApplicationRecord
   has_many :convos_b, class_name: "Conversation", foreign_key: "user_b_id"
   has_many :user_as, through: :convos_b, source: :user_a
 
-end
+
+  def all_conversations
+        all_convos = []
+
+        self.convos_a.each do |convo|
+
+            data = {
+                convo: convo,
+                user_a: User.find(convo.user_a_id),
+                user_b: User.find(convo.user_b_id),
+                messages: convo.messages
+            }
+            all_convos << data
+        end
+
+        self.convos_b.each do |convo|
+            data = {
+                convo: convo,
+                user_a: User.find(convo.user_a_id),
+                user_b: User.find(convo.user_b_id),
+                messages: convo.messages
+            }
+            all_convos << data
+        end
+
+        all_convos
+    end
+  end
