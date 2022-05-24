@@ -19,5 +19,4 @@ class Api::V1::MessagesController < ApplicationController
     def message_params
         params.permit(:content, :conversation_id, :user_id)
     end
-
 end
