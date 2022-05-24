@@ -16,7 +16,7 @@ class Api::V1::UsersController < ApplicationController
 
     params[:interests].each do |interest|
       db_interest = Interest.find_by(interest_name: interest)
-      new_interest = UserInterest.create!(user_id: user.id, interest_id: db_interest.id)
+      UserInterest.create!(user_id: user.id, interest_id: db_interest.id)
       user.interests << db_interest
     end
     render json: UserSerializer.one_user(user)
