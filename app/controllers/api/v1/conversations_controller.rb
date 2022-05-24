@@ -12,7 +12,6 @@ class Api::V1::ConversationsController < ApplicationController
     end
 
     def create
-
       if Conversation.between(params[:user_a_id], params[:user_b_id]).present?
         render json: {error: "Invalid request"}
       else

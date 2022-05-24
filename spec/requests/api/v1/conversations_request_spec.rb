@@ -51,4 +51,17 @@ RSpec.describe 'Expose Conversations API' do
     expect(conversation.count).to eq(5)
 
   end
+  it 'returns "Invalid request" if conversation exists' do
+
+    @conversation_3 = Conversation.create!(user_a_id: @dillon.id, user_b_id: @eldridge.id, id: 5)
+
+    post "/api/v1/conversations", :params => {user_a_id: @dillon.id, user_b_id: @eldridge.id}
+    expect(response).to be_successful
+    conversation = JSON.parse(response.body, symbolize_names: true)
+    binding.pry
+
+    expect(conversation).to be_an(Hash)
+    expect(conversation).to eq({:error=>"Invalid request"})
+
+  end
 end
