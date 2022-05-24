@@ -70,7 +70,7 @@ RSpec.describe 'Expose User API' do
 
   it 'sends json to edit one user based on given params' do
     patch_params = {
-      'city': 'denver,co',
+      'city': 'aurora,co',
       'interests': ['sports', 'night life', 'food', 'traveling', 'tech']
     }
     patch "/api/v1/users/#{@eldridge.id}", params: patch_params
@@ -84,10 +84,11 @@ RSpec.describe 'Expose User API' do
     expect(user).to have_key(:pronouns)
     expect(user).to have_key(:image)
     expect(user).to have_key(:city)
+    expect(user[:city]).to eq('aurora,co')
     expect(user).to have_key(:interests)
     expect(user[:interests]).to be_an(Array)
     expect(user).to have_key(:bio)
-    
+
     user[:interests].each do |interest|
       expect(interest).to be_a(String)
     end
