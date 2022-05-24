@@ -58,7 +58,7 @@ RSpec.describe 'Expose Conversations API' do
     post "/api/v1/conversations", :params => {user_a_id: @dillon.id, user_b_id: @eldridge.id}
     expect(response).to be_successful
     conversation = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
+  
 
     expect(conversation).to be_an(Hash)
     expect(conversation).to eq({:error=>"Invalid request"})
