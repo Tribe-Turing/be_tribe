@@ -4,12 +4,5 @@ class Message < ApplicationRecord
   validates_presence_of :conversation_id
   belongs_to :user
   belongs_to :conversation
-
-  def user_prof_pic
-      self.user.profile_pic
-  end
-
-  def user_username
-      self.user.username
-  end
+  
 end
