@@ -21,5 +21,13 @@ RSpec.describe User do
     it { should have_many(:convos_b) }
     it { should have_many(:user_as) }
   end
+  it 'all_conversations is an array' do
+    @eldridge = User.create!(first_name: 'Eldridge', last_name: 'Turambi', pronouns: 'he/him',
+                             password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'profile pic link', city: 'denver,co')
+    @andrew = User.create!(first_name: 'Andrew', last_name: 'Musselman', pronouns: 'he/him',
+                           password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'profile pic link', city: 'denver,co')
+
+    expect(@eldridge.all_conversations).to be_an(Array)
+  end
   end
 end
