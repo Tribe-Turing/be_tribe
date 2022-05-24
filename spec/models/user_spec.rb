@@ -54,5 +54,33 @@ RSpec.describe User do
       expect(convo).to be_a(Conversation)
     end
   end
+
+  it 'tests data for all conversations' do
+    @eldridge = User.create!(first_name: 'Eldridge', last_name: 'Turambi', pronouns: 'he/him',
+                             password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'profile pic link', city: 'denver,co')
+    @andrew = User.create!(first_name: 'Andrew', last_name: 'Musselman', pronouns: 'he/him',
+                           password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'profile pic link', city: 'denver,co')
+
+    @conversation_1 = Conversation.create!(user_a_id: @eldridge.id, user_b_id: @andrew.id, id: 15)
+
+    Message.create!(conversation_id: 15, user_id: @eldridge.id, content: 'Test 1')
+    Message.create!(conversation_id: 15, user_id: @andrew.id, content: 'Test 1')
+    Message.create!(conversation_id: 15, user_id: @eldridge.id, content: 'Test 2')
+    Message.create!(conversation_id: 15, user_id: @andrew.id, content: 'Test 2')
+    Message.create!(conversation_id: 15, user_id: @eldridge.id, content: 'Test 3')
+    Message.create!(conversation_id: 15, user_id: @andrew.id, content: 'Test 3')
+    Message.create!(conversation_id: 15, user_id: @eldridge.id, content: 'Test 4')
+    Message.create!(conversation_id: 15, user_id: @andrew.id, content: 'Test 4')
+
+    @andrew.all_conversations.each do |convo|
+      expect(convo).to have_key(:user_a)
+      expect(convo).to have_key(:user_b)
+      expect(convo).to have_key(:messages)
+    end
+    @eldridge.all_conversations.each do |convo|
+      expect(convo).to have_key(:user_a)
+      expect(convo).to have_key(:user_b)
+      expect(convo).to have_key(:messages)
+    end
   end
 end
