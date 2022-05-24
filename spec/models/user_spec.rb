@@ -29,13 +29,30 @@ RSpec.describe User do
 
     expect(@eldridge.all_conversations).to be_an(Array)
   end
-  xit 'tests for convos a  & b' do
+
+  it 'that a users convo is an instance of Conversation' do
     @eldridge = User.create!(first_name: 'Eldridge', last_name: 'Turambi', pronouns: 'he/him',
                              password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'profile pic link', city: 'denver,co')
     @andrew = User.create!(first_name: 'Andrew', last_name: 'Musselman', pronouns: 'he/him',
                            password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'profile pic link', city: 'denver,co')
-    require 'pry'
-    binding.pry
-    expect(@eldridge.convos_a).to eq([])
+
+    @conversation_1 = Conversation.create!(user_a_id: @eldridge.id, user_b_id: @andrew.id, id: 15)
+
+    Message.create!(conversation_id: 15, user_id: @eldridge.id, content: 'Test 1')
+    Message.create!(conversation_id: 15, user_id: @andrew.id, content: 'Test 1')
+    Message.create!(conversation_id: 15, user_id: @eldridge.id, content: 'Test 2')
+    Message.create!(conversation_id: 15, user_id: @andrew.id, content: 'Test 2')
+    Message.create!(conversation_id: 15, user_id: @eldridge.id, content: 'Test 3')
+    Message.create!(conversation_id: 15, user_id: @andrew.id, content: 'Test 3')
+    Message.create!(conversation_id: 15, user_id: @eldridge.id, content: 'Test 4')
+    Message.create!(conversation_id: 15, user_id: @andrew.id, content: 'Test 4')
+
+    @eldridge.convos_a.each do |convo|
+      expect(convo).to be_a(Conversation)
+    end
+    @andrew.convos_b.each do |convo|
+      expect(convo).to be_a(Conversation)
+    end
+  end
   end
 end
