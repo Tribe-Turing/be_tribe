@@ -16,5 +16,10 @@ RSpec.describe User do
     it { should have_many(:user_interests)}
     it { should have_many(:interests).through(:user_interests)}
     it { should have_many(:messages)}
+    it { should have_many(:convos_a) }
+    it { should have_many(:user_bs) }
+    it { should have_many(:convos_b) }
+    it { should have_many(:user_as) }
+  end
   end
 end
