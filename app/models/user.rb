@@ -17,6 +17,9 @@ class User < ApplicationRecord
   has_many :convos_b, class_name: "Conversation", foreign_key: "user_b_id"
   has_many :user_as, through: :convos_b, source: :user_a
 
+  def reset_interests
+    self.interests.destroy_all
+  end
 
   def all_conversations
         all_convos = []
