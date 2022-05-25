@@ -27,7 +27,7 @@ User.create!(first_name: 'Gunnar', last_name: 'Sorensen', pronouns: 'he/him', pa
 
 User.create!(first_name: 'Lauralyn', last_name: 'Watson', pronouns: 'she/her', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'red-fox', city: 'aurora,co', interests: [tech, traveling, video_games])
 
-User.create!(first_name: 'Rory', last_name: 'Magee', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'dragon', city: 'aurora,co', interests: [tech, traveling, video_games])
+User.create!(first_name: 'Rory', last_name: 'Magee', pronouns: 'he/him', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'dragon', city: 'aurora,co', interests: [traveling, video_games])
 
 User.create!(first_name: 'Sam', last_name: 'Ivari', pronouns: 'she/her', password_digest: 'password', bio: 'self proclaimed cool kid from the block', picture: 'catfish', city: 'aurora,co', interests: [networking, nature, cinema])
 
