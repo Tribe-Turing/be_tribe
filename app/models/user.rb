@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validates :password_digest,
+    :presence => {message: "can't be blank"}
+  has_secure_password
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_presence_of :pronouns
@@ -23,28 +26,18 @@ class User < ApplicationRecord
 
 
   def all_conversations
-    all_convos = []
+    test = Conversation.where(user_a_id: self.id).or(Conversation.where(user_b_id: self.id)).includes(:messages)
 
-    convos_a.each do |convo|
+all_convos = []
+    test.each do |convo|
       data = {
-        convo: convo,
-        user_a: User.find(convo.user_a_id),
-        user_b: User.find(convo.user_b_id),
-        messages: convo.messages
-      }
-      all_convos << data
-    end
-
-    convos_b.each do |convo|
-      data = {
-        convo: convo,
-        user_a: User.find(convo.user_a_id),
-        user_b: User.find(convo.user_b_id),
-        messages: convo.messages
-      }
-      all_convos << data
-    end
-
+          convo: convo,
+          user_a: User.find(convo.user_a_id).attributes.except("password_digest"),
+          user_b: User.find(convo.user_b_id).attributes.except("password_digest"),
+          messages: convo.messages
+        }
+        all_convos << data
+      end
     all_convos
   end
 end
