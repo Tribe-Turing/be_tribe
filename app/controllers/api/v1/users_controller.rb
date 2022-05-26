@@ -18,7 +18,7 @@ class Api::V1::UsersController < ApplicationController
         db_interest = Interest.find_by(interest_name: interest)
         UserInterest.create!(user_id: user.id, interest_id: db_interest.id)
         user.interests << db_interest
-      end.
+      end
       render json: UserSerializer.one_user(user)
     end
   end
