@@ -3,7 +3,6 @@ class Conversation < ApplicationRecord
   has_many :users, through: :messages
   belongs_to :user_a,foreign_key: :user_a_id, class_name: "User"
   belongs_to :user_b, foreign_key: :user_b_id, class_name: "User"
-  has_many :messages
 
   validates_uniqueness_of :user_a_id, scope: :user_b_id
 
