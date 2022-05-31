@@ -51,4 +51,5 @@ jobs:
           bundler-cache: true
       # Add or replace any other lints here
       - name: Security audit dependencies
+        run:  bundle exec gem update rack
         run:  bundle exec bundle-audit --update
