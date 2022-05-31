@@ -45,3 +45,20 @@ The design of this application relies on the facade design pattern. Here's a ver
 
 
 ## [JSON Contract and Endpoints tested in Postman](https://documenter.getpostman.com/view/20017443/Uz59PzXu)
+
+<table>
+    <tr>
+        <td> Sam Ivari: <a href="https://github.com/samivari">GitHub</td>
+        <td> Gunnar Sorensen: <a href="https://github.com/glsorensen">GitHub</td>
+        <td> Eldridge Turambi: <a href="https://github.com/Eldridge-Turambi">Github</td>
+        <td> Dillon Parker: <a href="https://github.com/Prkr93">Github</td>
+    </tr>
+ <td><img src="https://avatars.githubusercontent.com/u/87387139?v=4" alt="Sam Ivari GitHub"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars.githubusercontent.com/u/81265307?v=4" alt="Gunnar Sorensen GitHub"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars.githubusercontent.com/u/87398716?v=4" alt="Eldridge Turambi GitHub"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars.githubusercontent.com/u/90285348?v=4" alt="Dillon Parker GitHub"
+ width="150" height="auto" /></td>
+</table>
